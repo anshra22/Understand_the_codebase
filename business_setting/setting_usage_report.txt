@@ -1,0 +1,115 @@
+Business Settings: Complete Usage Report
+
+This document provides a definitive map of every Business Setting ID, its purpose, and a complete list of every file in the application that reads that setting to change its behavior.
+
+---
+### **Category: 🧾 Invoice**
+---
+
+**1. Setting: Invoice Prefix**
+   - **Purpose:** Sets a custom starting text for invoice numbers (e.g., "INV-2024-").
+   - **Used In:** `feature/sales/views/sale_invoice_create_screen.dart`
+
+**2. Setting: Terms & Conditions**
+   - **Purpose:** Appends legal text to the bottom of all generated PDFs/Receipts.
+   - **Used In:** `widgets/pdf_template_one.dart`, `widgets/pdf_template_two.dart`, `widgets/pdf_template_three.dart`
+
+**3. Setting: Show Discount Column**
+   - **Purpose:** Hides or unhides the discount input fields during the Sales flow.
+   - **Used In:** `feature/sales/views/sale_invoice_create_screen.dart`, `feature/sales/views/pos_screen.dart`
+
+**4. Setting: Show Tax Column**
+   - **Purpose:** Hides or unhides the GST/Tax calculation fields during the Sales flow.
+   - **Used In:** `feature/sales/views/sale_invoice_create_screen.dart`, `feature/sales/views/pos_screen.dart`
+
+**5. Setting: Enable Invoice Note**
+   - **Purpose:** Adds an extra "Notes" section to the generated PDF.
+   - **Used In:** `feature/sales/views/sales_invoice_screen.dart`
+
+---
+### **Category: 📦 Product**
+---
+
+**1. Setting: Custom Serial Label**
+   - **Purpose:** Renames "Serial Number" globally (e.g., to "IMEI").
+   - **Used In:** `feature/products/view/product_add.dart`, `feature/products/view/product_details.dart`, `feature/sales/views/sale_invoice_create_screen.dart`, `feature/sales/views/sales_product_screen.dart`, `feature/sales/views/pos_screen.dart`, `feature/purchase/view/purchase_product_screen.dart`, and all `*_return` screens.
+
+**2. Setting: Enable Serial Tracking**
+   - **Purpose:** Unlocks the ability to track and scan individual items.
+   - **Used In:** `feature/products/view/product_add.dart`
+
+**3. Setting: Want Bundles in Products**
+   - **Purpose:** Unlocks the "Composite Item" feature to group products.
+   - **Used In:** `feature/products/view/product_add.dart`
+
+**4. Setting: Enable Product Variants**
+   - **Purpose:** Unlocks the ability to add colors, sizes, etc., to a product.
+   - **Used In:** `feature/products/view/product_add.dart`
+
+**5. Setting: Enable Batched Products**
+   - **Purpose:** Unlocks the ability to track items by batch number and expiry date.
+   - **Used In:** `feature/products/view/product_add.dart`
+
+**6. Setting: Quick Add to Cart**
+   - **Purpose:** Bypasses the confirmation dialog in POS for faster sales.
+   - **Used In:** `feature/sales/views/sales_product_screen.dart`
+
+---
+### **Category: 🖨️ Printer**
+---
+
+**1. Setting: Invoice Template Selection**
+   - **Purpose:** Chooses the visual design (Template 1, 2, 3, or 4) for the PDF.
+   - **Used In:** `feature/sales/views/sales_invoice_screen.dart`
+
+**2. Setting: Thermal vs A4 Print Format**
+   - **Purpose:** Switches the PDF engine to generate tiny 58mm receipts.
+   - **Used In:** `feature/sales/views/sales_invoice_screen.dart`
+
+**3. Setting: Print on Save**
+   - **Purpose:** Automatically triggers the Bluetooth printer dialog upon invoice creation.
+   - **Used In:** `feature/sales/views/sale_invoice_create_screen.dart`
+
+---
+### **Category: ⚙️ Advance**
+---
+
+**1. Setting: POS Quick Actions**
+   - **Purpose:** Enables fast-checkout buttons on the Point of Sale screen.
+   - **Used In:** `feature/sales/views/pos_screen.dart`
+
+**2. Setting: Auto Round-off**
+   - **Purpose:** Automatically rounds final invoice totals to the nearest whole number.
+   - **Used In:** `feature/sales/views/pos_screen.dart`
+
+**3. Setting: Show Paid/Due Amount**
+   - **Purpose:** Prints the remaining balance on the PDF invoice.
+   - **Used In:** `widgets/pdf_template_two.dart`, `widgets/pdf_template_three.dart`
+
+**4. Setting: Show MRP on PDF**
+   - **Purpose:** Prints the "Max Retail Price" of an item on the invoice.
+   - **Used In:** `widgets/pdf_template_one.dart`, `widgets/pdf_template_two.dart`, `widgets/pdf_template_three.dart`, and `sales_return` screens.
+
+---
+### **Category: 🏢 Business Details**
+---
+
+**1. Setting: Company Logo**
+   - **Purpose:** Displays the company logo at the top of all PDFs and Estimates.
+   - **Used In:** All `widgets/pdf_template_*.dart` and `estimate_template.dart` files.
+
+**2. Setting: Authorized Signature**
+   - **Purpose:** Displays a signature image at the bottom of official documents.
+   - **Used In:** All `widgets/pdf_template_*.dart` and `estimate_template.dart` files.
+
+**3. Setting: Company Name**
+   - **Purpose:** Injects the business name into headers, PDFs, and payment links.
+   - **Used In:** All `widgets/pdf_template_*.dart` and `estimate_template.dart` files.
+
+**4. Setting: Address**
+   - **Purpose:** Prints the physical location of the business on invoices.
+   - **Used In:** All `widgets/pdf_template_*.dart` and `estimate_template.dart` files.
+
+**5. Setting: GSTIN / Tax ID**
+   - **Purpose:** Displays the legal tax registration number on invoices for compliance.
+   - **Used In:** All `widgets/pdf_template_*.dart` and `estimate_template.dart` files.
