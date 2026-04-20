@@ -1,3 +1,5 @@
+# Party Feature Session Summary
+
 This document summarizes the complete analysis of the "Parties" feature conducted during this session.
 
 ### 1. Feature Overview & Purpose
@@ -12,8 +14,8 @@ We conducted a detailed analysis of the feature and found:
 ### 3. Generated Documentation
 We have created the following artifact to permanently document our findings:
 
-*   **File Location:** `ansh/party/party_overview.txt`
-*   **Contents:** A detailed, formatted text file containing:
+*   **File Location:** `ansh/party/party_overview.md`
+*   **Contents:** A detailed, formatted Markdown file containing:
     1.  A high-level overview of the feature's purpose.
     2.  A breakdown of the critical fields in the `Party` data model.
     3.  A detailed explanation of the "Opening Balance" business logic.
